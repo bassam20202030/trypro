@@ -1,9 +1,9 @@
 ---
 title: "Analysis of Teachers' Recruitment in Saudi Arabia Between 1437 and 1440"
 subtitle: "Data from Saudi Open Data Office"
-author: "Musab Isah"
+author: "Bassam Hamdy "
 date: "6 March 2021"
-output: pdf_document
+output: html_document
 ---
 
 Group Number:

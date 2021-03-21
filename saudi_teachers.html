@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Musab Isah" />
+<meta name="author" content="Bassam Hamdy" />
 
 <meta name="date" content="2021-03-06" />
 
@@ -191,112 +191,165 @@ summary {
 
 <h1 class="title toc-ignore">Analysis of Teachers’ Recruitment in Saudi Arabia Between 1437 and 1440</h1>
 <h3 class="subtitle">Data from Saudi Open Data Office</h3>
-<h4 class="author">Musab Isah</h4>
+<h4 class="author">Bassam Hamdy</h4>
 <h4 class="date">6 March 2021</h4>
 
 </div>
 
 
-<p>Group Number: Group Members Name (ID):</p>
+<p>Group Number:</p>
+<p>Group Members’ Names (IDs):</p>
 <ol style="list-style-type: decimal">
-<li>Abc Xyz (00000000)</li>
-<li></li>
-<li></li>
-<li></li>
+<li>Abc Xyz (00000000) – Team Leader</li>
+<li><pre><code>                 -- Member 1</code></pre></li>
+<li><pre><code>                 -- Member 2</code></pre></li>
+<li><pre><code>                 -- Member 3</code></pre></li>
 </ol>
-<p>The purpose of this project explore the data about teachers recruitment at different levels of schooling (with the exception of higher education, such as universities) between 1437 and 1440 Hijri. The data is sourced from Saudi Open Data Office and you are expected to use the provided data to answer the questions below.</p>
-<p>Here we load the libraries that we will need to manipulate the dataset.</p>
-<p>We then need to import the data from the csv file teachers_data.csv to the R environment for manipulation. Since the dataset is in Arabic, we need to state that specifically so that R will treat it as such.</p>
-<pre class="r"><code>#arabic &lt;- readLines(&quot;teachers_data.csv&quot;, warn = FALSE, encoding = &quot;UTF-8&quot;)
-#tdata &lt;- read.csv(text = arabic)
-Sys.setlocale(&quot;LC_ALL&quot;,&quot;Arabic&quot;)</code></pre>
-<pre><code>## [1] &quot;LC_COLLATE=Arabic_Saudi Arabia.1256;LC_CTYPE=Arabic_Saudi Arabia.1256;LC_MONETARY=Arabic_Saudi Arabia.1256;LC_NUMERIC=C;LC_TIME=Arabic_Saudi Arabia.1256&quot;</code></pre>
-<pre class="r"><code>tdata = read_csv(&quot;teachers_data.csv&quot;, locale = locale(encoding = &quot;UTF-8&quot;))</code></pre>
-<div id="delete-the-comment-add-some-code-to-write-your-code-for-the-task." class="section level1">
-<h1>Delete the comment (#Add some code) to write your code for the task.</h1>
+<p>The purpose of this project explore the data on teachers recruitment at different levels of schooling (with the exception of higher education, such as universities) between 1437 and 1440 Hijri in Saudi Arabia. The data is sourced from Saudi Open Data Office and you are expected to use the provided data to answer the questions below.</p>
+<p>Remember that this is a collaborative work and each member must participate in completing the project.</p>
+<div id="cloning-the-project-file" class="section level2">
+<h2>Cloning the Project File</h2>
+</div>
+<div id="actions-by-team-leader" class="section level1">
+<h1>Actions by Team Leader</h1>
+<ol style="list-style-type: decimal">
+<li><p>The team leader should clone the project files from <a href="https://github.com/musabu/DSC200_202_course_project.git" class="uri">https://github.com/musabu/DSC200_202_course_project.git</a> to their github account.</p></li>
+<li><p>Make the repo private during the creation process.</p></li>
+<li><p>Add the members of your team and your instructor (my username is musabu) as collaborators on the project.</p></li>
+</ol>
+</div>
+<div id="actions-by-other-team-members" class="section level1">
+<h1>Actions by other Team Members</h1>
+<ol style="list-style-type: decimal">
+<li><p>Clone the project files from the github page of your team leader <a href="https://github.com/team_leader_username/DSC200_202_course_project.git" class="uri">https://github.com/team_leader_username/DSC200_202_course_project.git</a></p></li>
+<li><p>Make the repo private during the creation process.</p></li>
+</ol>
+</div>
+<div id="action-by-team-leader-and-members" class="section level1">
+<h1>Action by Team Leader and members</h1>
+<p>Import the files to your rstudio cloud. The R Markdown for solving the tasks is called saudi_teachers.Rmd.</p>
+<div id="packages" class="section level2">
+<h2>Packages</h2>
+<p>Once you import the project into rstudio.cloud, open the file saudi_teachers.Rmd. Ensure you have the <code>tidyverse</code> and <code>readxl</code> packages installed by running the 2 lines of code below. Both the team leader and members should run the code below in the console of rstudio <code>install.packages(&quot;tidyverse&quot;)</code> and <code>install.packages(&quot;readxl&quot;)</code></p>
+</div>
+<div id="loading-libraries" class="section level2">
+<h2>Loading Libraries</h2>
+<p>Here we load the libraries that we will need to read the MS Excel file and to manipulate the dataset. Both the team leader and members should run the code below.</p>
+<p>We then need to load the data from the MS Excel (.xlsx) file, named teachers_data.xlsx, to the R environment for processing.</p>
+<p><em>Note: Only Team Leader should run the code below</em></p>
+<pre class="r"><code>tdata &lt;- read_excel(&quot;teachers_data.xlsx&quot;)</code></pre>
+</div>
+</div>
+<div id="wherever-you-see-the-text-add-some-code-it-means-you-should-delete-the-comment-and-add-your-code-for-the-task." class="section level1">
+<h1>Wherever you see the text ‘#Add some code’, it means you should delete the comment and add your code for the task.</h1>
+</div>
+<div id="marks-will-be-deducted-for-every-deadline-missed." class="section level1">
+<h1>2 Marks will be deducted for every deadline missed.</h1>
 <div id="task-1" class="section level2">
 <h2>Task 1</h2>
-<p>(8 points)</p>
-<p>The first thing we need to do is to tidy the data by changing the column names to a name that R could easily use - English Word with no space.</p>
+<p></p>
+<p>The first thing we need to do is to tidy the data by changing the Arabic column names to English names that you could easily use in your code. There should be no space in the column name. For example, change the arabic text Al-Sanah to <span class="math inline">\(year\)</span>. I have provided you with some English names you could use in the tasks below. You could use Google Translate to find the right English words for the rest of the variables. Ensure that there is no space for variables with two words. For instance administrative regions should be written as administrative_regions.</p>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Team Leader should <em>Knit, commit, and push changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
+<p></p>
 </div>
 <div id="task2" class="section level2">
 <h2>Task2</h2>
+<p></p>
+<p>Next Team Member should <em>Pull the changes made by Team Leader before proceeding.</em></p>
 <ol style="list-style-type: lower-alpha">
-<li>What are the different administrative regions (المنطقة الإدارية) found in the data? (4 points)</li>
+<li>What are the different administrative_regions (Al-Mandaqah Al-idariyyah) found in the data?</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Based on your knowledge of the administrative regions in Saudi Arabia, is there any region that has not recruited any teacher during the period under review (1437 - 1440 Hijri)? (4 points)</li>
+<li>Based on your knowledge of the administrative regions in Saudi Arabia, is there any region that has not recruited any teacher during the period under review (1437 - 1440 Hijri)? List the Saudi regions shown in the data.</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
+<p>The Team Member should <em>Knit, commit, and push changes to GitHub with an appropriate commit message.</em></p>
+<p></p>
 </div>
 <div id="task3" class="section level2">
 <h2>Task3</h2>
+<p></p>
+<p>The Next Team Member should <em>Pull the changes made by Member 1 before proceeding.</em></p>
 <ol style="list-style-type: lower-alpha">
-<li>Saudi Arabian education is divided into different stages/levels (المرحلة), list the different levels showed in the data in descending order of frequency. (4 points)</li>
+<li>Saudi Arabian education is divided into different stages/levels (Al-Marhala), list the different levels showed in the data in descDEADLINE: ENDing order of frequency. (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Which level recruit the most teachers? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
+<p>The Team Member should <em>Knit, commit, and push changes to GitHub with an appropriate commit message.</em></p>
+<p>The Next Team member should <em>Pull the changes made by Team Leader before proceeding.</em></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Plot the graph of region versus number of <strong>Saudi</strong> teachers recruited over the period. (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Plot the graph of region versus number of <strong>Non-Saudi</strong> teachers recruited over the period. (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Plot the graph of region versus number of <strong>all teachers</strong> recruited over the period. (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
+<p>The Team Member should <em>Knit, commit, and push changes to GitHub with an appropriate commit message.</em></p>
+<p></p>
 </div>
 <div id="task-4" class="section level2">
 <h2>Task 4</h2>
+<p></p>
+<p>The Next Team member should <em>Pull the changes made previously before proceeding.</em></p>
 <ol style="list-style-type: lower-alpha">
 <li>How many boys and how many girls schools are listed in the data? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Between boys and girls schools, which recruit more teachers? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>What is the correlation between recruitment at boys schools and recruitment of girls schools? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
+<p>The Team Member should <em>Knit, commit, and push changes to GitHub with an appropriate commit message.</em></p>
+<p></p>
 </div>
 <div id="task-5" class="section level2">
 <h2>Task 5</h2>
+<p></p>
+<p>The Next Team member should <em>Pull the changes made previously before proceeding.</em></p>
 <ol style="list-style-type: lower-alpha">
-<li>How many teachers are recruited each year, 1437, 1438, 1439, and 1440? (4 points)</li>
+<li>How many teachers are recruited each year, 1437, 1438, 1439, and 1440?</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Which region recruited the most teachers in each of the years under review? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Plot the graph of number of teachers recruited vs the number of schools in an administrative region? What type or relationship exist between the two variables? (4 points)</li>
 </ol>
 <pre class="r"><code>#Add some code</code></pre>
-<p>Answer:</p>
+<p>Comments about your answer:</p>
+<p>The Team Member should <em>Knit, commit, and push changes to GitHub with an appropriate commit message.</em></p>
+<p></p>
+</div>
+<div id="if-you-are-here-then-congratulations-you-have-completed-the-dsc-200-course-project." class="section level2">
+<h2>If you are here, then congratulations!! You have completed the DSC 200 course project.</h2>
 </div>
 </div>
 
